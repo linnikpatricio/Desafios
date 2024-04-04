@@ -5,21 +5,28 @@ import javax.swing.*;
 public class Forwhiledowhile {
 
     public static void imprimirLoop(int numero){
+        String texto = "";
 
         for (int i = 0; i < numero; i++) {
-            JOptionPane.showMessageDialog(null,"For " + i);
-
+            texto = texto + "For: " + i + "\n";
         }
+        JOptionPane.showMessageDialog(null,texto);
+
         int aux = 0;
         while (aux < numero){
-            JOptionPane.showMessageDialog(null,"While " + aux);
             aux++;
+            texto = texto + "While: " + aux + "\n";
         }
+        JOptionPane.showMessageDialog(null,texto);
+
         int aux1 = 0;
         do {
-            JOptionPane.showMessageDialog(null,"Do While" + aux1);
             aux1++;
+            texto = texto + "Do While: " + aux1 + "\n";
+
         }while (aux1 < numero);
+        JOptionPane.showMessageDialog(null,texto);
+
 
 
 

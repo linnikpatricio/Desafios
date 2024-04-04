@@ -1,43 +1,53 @@
 package org.example.exercicios.exercicio1;
 
+import javax.swing.*;
+
 public class Switchh {
 
-    public static final String SEGUNDA_FEIRA = "segunda";
-    public static final String TERCA_FEIRA = "segunda";
-    public static final String QUARTA_FEIRA = "segunda";
-    public static final String QUINTA_FEIRA = "segunda";
-    public static final String SEXTA_FEIRA = "segunda";
-    public static final String SABADO_FEIRA = "segunda";
-    public static final String DOMINGO = "segunda";
+    public static final int SEGUNDA_FEIRA = 1;
+    public static final int TERCA_FEIRA = 2;
+    public static final int QUARTA_FEIRA = 3;
+    public static final int QUINTA_FEIRA = 4;
+    public static final int SEXTA_FEIRA = 5;
+    public static final int SABADO_FEIRA = 6;
+    public static final int DOMINGO = 7;
 
     public static String diasDaSemana(int numeroDia) {
 
         switch (numeroDia) {
-            case 1:
-                return SEGUNDA_FEIRA;
+            case SEGUNDA_FEIRA:
+                JOptionPane.showMessageDialog(null, "segunda");
+                break;
 
-            case 2:
-                return TERCA_FEIRA;
+            case TERCA_FEIRA:
+                JOptionPane.showMessageDialog(null, "terça feira");
+                break;
 
-            case 3:
-                return QUARTA_FEIRA;
+            case QUARTA_FEIRA:
+                JOptionPane.showMessageDialog(null, "quarta feira");
+                break;
 
-            case 4:
-                return QUINTA_FEIRA;
+            case QUINTA_FEIRA:
+                JOptionPane.showMessageDialog(null, "quinta feira");
+                break;
 
-            case 5:
-                return SEXTA_FEIRA;
+            case SEXTA_FEIRA:
+                JOptionPane.showMessageDialog(null, "sexta feira");
+                break;
 
-            case 6:
-                return SABADO_FEIRA;
+            case SABADO_FEIRA:
+                JOptionPane.showMessageDialog(null, "sabado");
+                break;
 
-            case 7:
-                return DOMINGO;
+            case DOMINGO:
+                JOptionPane.showMessageDialog(null, "domingo");
+                break;
 
             default:
-                return "Numero Invalido ";
+                return "Numero Invalido... ";
 
         }
+        return null;
 
     }
 }

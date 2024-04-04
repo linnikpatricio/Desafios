@@ -9,20 +9,29 @@ public class ServicoTarefa {
 
     public ServicoTarefa() {
         listaTarefas = new ArrayList<>();
-
-
     }
 
     //  METODO PRA ADICIONAR TAREFAS
     public void adicionarTarefa(Tarefa tarefa) {
-        if(!listaTarefas.contains(tarefa)) {
-            listaTarefas.add(tarefa);
+        boolean existeNomeTarefa = adicionarTarefaSemRepeticao(tarefa.getNome());
 
-        }else {
-            JOptionPane.showMessageDialog(null,"A palavra '" + tarefa + "' já está na lista e não será adicionada novamente.");
+        while (existeNomeTarefa) {
+            String novaTarefa = JOptionPane.showInputDialog(null, "Essa tarefa já existe, por favor digite uma nova tarefa!");
+            existeNomeTarefa = adicionarTarefaSemRepeticao(novaTarefa);
         }
 
+        listaTarefas.add(tarefa);
+        JOptionPane.showMessageDialog(null, "Tarefa Adicionada");
+    }
 
+    public boolean adicionarTarefaSemRepeticao(String nome) {
+        for (int i = 0; i < listaTarefas.size(); i++) {
+            if (listaTarefas.get(i).getNome().equalsIgnoreCase(nome)) {
+                return true;
+
+            }
+        }
+        return false;
     }
 
     //    METODO PRA LISTAR TODAS AS TAREFAS
@@ -30,15 +39,15 @@ public class ServicoTarefa {
         String texto = "";
         JOptionPane.showMessageDialog(null, " === Lista de Tarefas === ");
         for (Tarefa tarefa : listaTarefas) {
-            texto = texto + "\n"+tarefa.getNome();
+            texto = texto + "\n" + tarefa.getNome();
         }
-        JOptionPane.showMessageDialog(null,texto);
+        JOptionPane.showMessageDialog(null, texto);
 
 
     }
 
-//    METODO PRA REMOVER UMA TAREFA
-    public void removerTarefas(String nome){
+    //    METODO PRA REMOVER UMA TAREFA
+    public void removerTarefas(String nome) {
         Tarefa tarefaRemover = null;
         for (Tarefa tarefas : listaTarefas) {
             if (tarefas.getNome().equals(nome)) {
@@ -47,15 +56,14 @@ public class ServicoTarefa {
 
             }
         }
-        if(tarefaRemover != null){
+        if (tarefaRemover != null) {
             listaTarefas.remove(tarefaRemover);
-            JOptionPane.showMessageDialog(null,"Tarefas removida: "+tarefaRemover);
+            JOptionPane.showMessageDialog(null, "Tarefa removida: " + tarefaRemover);
 
 
         } else {
-            JOptionPane.showMessageDialog(null,"Tarefa não encontrada");
+            JOptionPane.showMessageDialog(null, "Tarefa não encontrada");
         }
-
 
 
     }

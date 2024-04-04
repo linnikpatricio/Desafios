@@ -1,10 +1,13 @@
 package org.example.exercicios.exercicio2;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         ServicoTarefa servicoTarefa = new ServicoTarefa();
+
+
 
         int opcao;
         do {
@@ -19,7 +22,7 @@ public class Main {
                 String novaTarefa = JOptionPane.showInputDialog(null,"Insira sua tarefa ");
                 Tarefa tarefa = new Tarefa(novaTarefa);
                 servicoTarefa.adicionarTarefa(tarefa);
-                JOptionPane.showMessageDialog(null," Tarefa Adicionada !!! ");
+
 
             }else if (opcao == 2){
                 servicoTarefa.visualizarTarefas();
